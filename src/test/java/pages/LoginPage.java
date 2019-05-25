@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.BaseTests;
 
@@ -22,7 +23,7 @@ public class LoginPage extends BaseTests {
     private WebElement loginButton;
      @FindBy(xpath = "//span[@data-bind='text: customer().fullname'][ contains (text(),'Juan Pablo Leal')]")
      private WebElement loginCorrecto;
-     @FindBy(xpath = "//div[@id='email-error'][contains (text(), 'Este es un campo obligatorio.')]")
+     @FindBy(id = "email-error")
      private WebElement loginFallido;
 
 
@@ -41,11 +42,11 @@ public class LoginPage extends BaseTests {
     }
 
     public boolean ok() {
-      return loginCorrecto.isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOf(this.loginCorrecto)).isDisplayed();
     }
 
     public boolean fail() {
-        return loginFallido.isDisplayed();
+        return wait.until((ExpectedConditions.visibilityOf(this.loginFallido))).isDisplayed();
     }
 }
 

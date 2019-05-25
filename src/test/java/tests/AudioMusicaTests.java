@@ -12,11 +12,12 @@ public class AudioMusicaTests extends BaseTests{
         String nombreProducto = "Piano";
 
 
-       // Assert.assertTrue(loginPage.fail());
         loginPage.Login("", "");
+        Assert.assertTrue(loginPage.fail());
 
-        //Assert.assertTrue(loginPage.ok());
         loginPage.Login("jpleal79@hotmail.com", "serrano832");
+        Assert.assertTrue(loginPage.ok());
+
 
         Assert.assertTrue(homePage.at());
         homePage.buscarEnCajaDeTexto(nombreProducto);
