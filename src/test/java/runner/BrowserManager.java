@@ -16,7 +16,7 @@ public class BrowserManager {
     }
 
     if (FIREFOX.equals(browserName)) {
-      WebDriverManager.firefoxdriver();
+      WebDriverManager.firefoxdriver().setup();
       return new FirefoxDriver();
     }
 

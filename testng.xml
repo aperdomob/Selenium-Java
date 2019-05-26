@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multibrowser">
+  <test verbose="2" preserve-order="true" name="Chrome">
+    <parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="tests.AudioMusicaTests"></class>
+    </classes>
+  </test>
+  <test verbose="2" preserve-order="true" name="Firefox">
+    <parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="tests.AudioMusicaTests">
+      </class>
+    </classes>
+  </test>
+</suite>

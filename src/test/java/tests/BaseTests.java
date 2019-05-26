@@ -1,19 +1,15 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+
+import java.util.concurrent.TimeUnit;
 import pages.AgregarPage;
 import pages.FiltrarPage;
 import pages.HomePage;
 import pages.LoginPage;
-
-import java.util.concurrent.TimeUnit;
 import runner.BrowserManager;
 
 public class BaseTests {
@@ -24,6 +20,7 @@ public class BaseTests {
     public LoginPage loginPage;
     public FiltrarPage filtrarPage;
     public AgregarPage agregarPage;
+
 
 
     @BeforeTest
